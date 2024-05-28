@@ -1,0 +1,21 @@
+celldex package
+===============
+
+Submodules
+----------
+
+celldex.skeleton module
+-----------------------
+
+.. automodule:: celldex.skeleton
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: celldex
+   :members:
+   :undoc-members:
+   :show-inheritance:
