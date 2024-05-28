@@ -3,7 +3,7 @@ import json
 import os
 
 from dolomite_base import alt_read_object, alt_read_object_function
-from gypsum_client import cache_directory, fetch_latest, save_file, save_version
+from gypsum_client import cache_directory, save_file, save_version
 from summarizedexperiment import SummarizedExperiment
 
 from .utils import celldex_load_object
@@ -81,8 +81,12 @@ def fetch_reference(
         or one of its subclasses.
     """
 
-    version_path = save_version(package, name, version, cache_dir=cache_dir, overwrite=overwrite)
-    obj_path = version_path if path is None else os.path.join(version_path, path.rstrip("/"))
+    version_path = save_version(
+        package, name, version, cache_dir=cache_dir, overwrite=overwrite
+    )
+    obj_path = (
+        version_path if path is None else os.path.join(version_path, path.rstrip("/"))
+    )
 
     old = alt_read_object_function(celldex_load_object)
 
@@ -143,35 +147,11 @@ def fetch_metadata(
         Dictionary containing metadata for the specified dataset.
     """
     remote_path = "_bioconductor.json" if path is None else f"{path}/_bioconductor.json"
-    local_path = save_file(package, name, version, remote_path, cache_dir=cache_dir, overwrite=overwrite)
+    local_path = save_file(
+        package, name, version, remote_path, cache_dir=cache_dir, overwrite=overwrite
+    )
 
     with open(local_path, "r") as f:
         metadata = json.load(f)
 
     return metadata
-
-
-def fetch_latest_version(name: str) -> str:
-    """Fetch the latest version for a reference from the gypsum backend.
-
-    See Also:
-        :py:func:`~.fetch_reference`,
-        to fetch a reference.
-
-        :py:func:`~.fetch_metadata`,
-        to fetch the metadata for the reference.
-
-    Example:
-
-    .. code-block:: python
-
-        meta = fetch_latest_version("immgen")
-
-    Args:
-        name:
-            Name of the reference.
-
-    Returns:
-        String specifying the latest version for the reference.
-    """
-    return fetch_latest("celldex", name)
