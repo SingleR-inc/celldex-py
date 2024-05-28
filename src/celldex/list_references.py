@@ -38,7 +38,7 @@ def list_references(
             Defaults to True.
 
     Returns:
-        A :py:class:`~pandas.DataFrame` where each row corresponds to a reference 
+        A :py:class:`~pandas.DataFrame` where each row corresponds to a reference
         dataset. Each row contains title and description for each reference,
         the number of rows and columns, the organisms and genome builds involved,
         whether the dataset has any pre-computed reduced dimensions, and so on.
@@ -67,7 +67,7 @@ def list_references(
 
 
 def _format_query_results(results: list, key_names: list):
-    """Format the results from sqlite as a pandas dataframe
+    """Format the results from sqlite as a pandas dataframe.
 
     Key names must be in the exact same order as the query.
     """
