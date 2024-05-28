@@ -15,4 +15,5 @@ except PackageNotFoundError:  # pragma: no cover
 finally:
     del version, PackageNotFoundError
 
+from .fetch_reference import fetch_latest, fetch_latest_version, fetch_metadata, fetch_reference
 from .list_references import list_references
