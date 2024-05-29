@@ -134,7 +134,7 @@ def fetch_metadata(
 
         package:
             Name of the package.
-            Defaults to "scRNAseq".
+            Defaults to "celldex".
 
         cache_dir:
             Path to the cache directory.
