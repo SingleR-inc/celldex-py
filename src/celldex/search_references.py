@@ -97,7 +97,7 @@ def search_references(
         stmt += ", versions.latest AS latest"
         key_names.append("latest")
 
-    stmt += " FROM paths LEFT JOIN versions ON paths.vid = versions.vid WHERE versions.project = 'scRNAseq'"
+    stmt += " FROM paths LEFT JOIN versions ON paths.vid = versions.vid WHERE versions.project = 'celldex'"
 
     if latest:
         stmt += " AND versions.latest = 1"
