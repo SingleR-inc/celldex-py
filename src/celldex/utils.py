@@ -18,10 +18,11 @@ def celldex_load_object(
 
     Args:
         path:
-            Path to the dataset.
+            Path to the reference dataset.
 
         metadata:
-            Metadata for the dataset.
+            Metadata for the reference dataset.
+
             Defaults to None.
 
         celldex_realize_assays:

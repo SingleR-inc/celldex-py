@@ -47,10 +47,10 @@ def fetch_reference(
 
     Args:
         name:
-            Name of the dataset.
+            Name of the reference dataset.
 
         version:
-            Version of the dataset.
+            Version of the reference dataset.
 
         path:
             Path to a subdataset, if name contains multiple datasets.
@@ -123,10 +123,10 @@ def fetch_metadata(
 
     Args:
         name:
-            Name of the dataset.
+            Name of the reference dataset.
 
         version:
-            Version of the dataset.
+            Version of the reference dataset.
 
         path:
             Path to a subdataset, if name contains multiple datasets.

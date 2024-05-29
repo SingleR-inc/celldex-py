@@ -18,7 +18,7 @@ __license__ = "MIT"
 
 @singledispatch
 def save_reference(x: Any, labels: List[str], path: str, metadata: dict):
-    """Save a dataset to disk.
+    """Save a reference dataset to disk.
 
     Args:
         x:

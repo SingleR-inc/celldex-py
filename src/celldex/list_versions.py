@@ -18,7 +18,7 @@ def list_versions(name: str) -> List[str]:
 
     Args:
         name:
-            Name of the dataset.
+            Name of the reference dataset.
 
     Returns:
         A list of version names.
