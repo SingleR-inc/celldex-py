@@ -1,18 +1,9 @@
 # celldex
 
-Add a short description here!
+This package provides reference datasets with annotated cell types for convenient use by [BiocPy](https://github.com/biocpy) packages and workflows in Python.
+These references were sourced and uploaded by the [celldex R/Bioconductor](https://bioconductor.org/packages/devel/data/experiment/html/celldex.html) package.
 
-
-## Note
-
-> This is the main page of your project's [Sphinx] documentation. It is
-> formatted in [Markdown]. Add additional pages by creating md-files in
-> `docs` or rst-files (formatted in [reStructuredText]) and adding links to
-> them in the `Contents` section below.
->
-> Please check [Sphinx] and [MyST] for more information
-> about how to document your project and how to configure your preferences.
-
+Each dataset is loaded as a [`SummarizedExperiment`](https://bioconductor.org/packages/SummarizedExperiment) that is ready for further analysis, and may be used for downstream analysis, e.g in the [SingleR Python implementation](https://github.com/BiocPy/singler).
 
 ## Contents
 
@@ -20,11 +11,11 @@ Add a short description here!
 :maxdepth: 2
 
 Overview <readme>
+Module Reference <api/modules>
 Contributions & Help <contributing>
 License <license>
 Authors <authors>
 Changelog <changelog>
-Module Reference <api/modules>
 ```
 
 ## Indices and tables
