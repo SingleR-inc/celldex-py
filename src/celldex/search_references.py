@@ -48,17 +48,11 @@ def search_references(
 
     .. code-block:: python
 
-        res = search_references("brain")
+        res = search_references("human")
 
-        res = search_references(define_text_query("Neuro%", partial=True")
+        res = search_references(define_text_query("Immun%", partial=True")
 
         res = search_references(define_text_query("10090", field="taxonomy_id")
-
-        res = search_references(
-            define_text_query("GRCm38", field="genome") &
-            (define_text_query("neuro%", partial=True) |
-                define_text_query("pancrea%", partial=True))
-        )
 
     Args:
         query:
