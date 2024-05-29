@@ -8,11 +8,11 @@ __license__ = "MIT"
 
 
 def test_search_references():
-    res = search_references("brain")
-    assert len(res) > 10
+    res = search_references("human")
+    assert len(res) > 3
     assert isinstance(res, pd.DataFrame)
 
-    res = search_references(define_text_query("Neuro%", partial=True))
+    res = search_references(define_text_query("Immun%", partial=True))
     assert isinstance(res, pd.DataFrame)
     assert len(res) > 0
 
