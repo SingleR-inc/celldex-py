@@ -67,6 +67,16 @@ print(ref)
 # metadata(0):
 ```
 
+## Search for references
+
+There's limited number of references right now, but if you want to search for references,
+
+```python
+res = search_references("human")
+res = search_references(define_text_query("Immun%", partial="True"))
+res = search_references(define_text_query("10090", field="taxonomy_id"))
+```
+
 ## Adding new reference datasets
 
 These instructions follow the same steps outlined in the [scrnaseq package](https://github.com/biocpy/scrnaseq).
