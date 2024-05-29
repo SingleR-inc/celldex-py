@@ -23,8 +23,7 @@ def search_references(
     overwrite: bool = False,
     latest: bool = True,
 ) -> pd.DataFrame:
-    """Search for reference datasets of interest based on matching
-    text in the associated metadata.
+    """Search for reference datasets of interest based on matching text in the associated metadata.
 
     This is a wrapper around
     :py:func:`~gypsum_client.search_metadata.search_metadata_text`.
@@ -63,7 +62,7 @@ def search_references(
 
     Args:
         query:
-            The search query string or a 
+            The search query string or a
             :py:class:`~gypsum_client.search_metadata.GypsumSearchClause` for
             more complex queries.
 
