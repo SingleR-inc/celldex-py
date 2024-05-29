@@ -30,7 +30,7 @@ pip install celldex
 
 ## Find reference datasets
 
-The `list_references()` function will display all available reference datasets along with their metadata. 
+The `list_references()` function will display all available reference datasets along with their metadata.
 
 ```python
 from celldex import list_references
@@ -64,7 +64,7 @@ print(ref)
 # row_names(22134): ['Zglp1', 'Vmn2r65', 'Gm10024', ..., 'Ifi44', 'Tiparp', 'Kdm1a']
 # column_data columns(3): ['label.main', 'label.fine', 'label.ont']
 # column_names(830): ['GSM1136119_EA07068_260297_MOGENE-1_0-ST-V1_MF.11C-11B+.LU_1.CEL', 'GSM1136120_EA07068_260298_MOGENE-1_0-ST-V1_MF.11C-11B+.LU_2.CEL', 'GSM1136121_EA07068_260299_MOGENE-1_0-ST-V1_MF.11C-11B+.LU_3.CEL', ..., 'GSM920653_EA07068_201207_MOGENE-1_0-ST-V1_TGD.VG4+24AHI.E17.TH_3.CEL', 'GSM920654_EA07068_201214_MOGENE-1_0-ST-V1_TGD.VG4+24ALO.E17.TH_1.CEL', 'GSM920655_EA07068_201215_MOGENE-1_0-ST-V1_TGD.VG4+24ALO.E17.TH_2.CEL']
-# metadata(0): 
+# metadata(0):
 ```
 
 ## Adding new reference datasets
