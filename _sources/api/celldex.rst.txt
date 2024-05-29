@@ -4,10 +4,58 @@ celldex package
 Submodules
 ----------
 
-celldex.skeleton module
------------------------
+celldex.fetch\_reference module
+-------------------------------
 
-.. automodule:: celldex.skeleton
+.. automodule:: celldex.fetch_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+celldex.list\_references module
+-------------------------------
+
+.. automodule:: celldex.list_references
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+celldex.list\_versions module
+-----------------------------
+
+.. automodule:: celldex.list_versions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+celldex.save\_reference module
+------------------------------
+
+.. automodule:: celldex.save_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+celldex.search\_references module
+---------------------------------
+
+.. automodule:: celldex.search_references
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+celldex.upload\_reference module
+--------------------------------
+
+.. automodule:: celldex.upload_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+celldex.utils module
+--------------------
+
+.. automodule:: celldex.utils
    :members:
    :undoc-members:
    :show-inheritance:
