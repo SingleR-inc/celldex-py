@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
     <!-- Generated with Sphinx 7.3.7 and Furo 2024.05.06 -->
-        <title>celldex.save_reference - celldex 0.1.0 documentation</title>
+        <title>celldex.save_reference - celldex 0.1.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=387cc868" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
@@ -178,7 +178,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">celldex 0.1.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">celldex 0.1.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -202,7 +202,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
-  <span class="sidebar-brand-text">celldex 0.1.0 documentation</span>
+  <span class="sidebar-brand-text">celldex 0.1.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -376,12 +376,15 @@
                 <span class="sa">f</span><span class="s2">&quot;All labels in &#39;column_data&#39; must be a list of strings; column </span><span class="si">{</span><span class="n">_cn</span><span class="si">}</span><span class="s2"> does not.&quot;</span>
             <span class="p">)</span>
 
+    <span class="k">if</span> <span class="s2">&quot;logcounts&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">()):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Assay &#39;logcounts&#39; does not exist.&quot;</span><span class="p">)</span>
+
     <span class="n">_mat</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">assay</span><span class="p">(</span><span class="s2">&quot;logcounts&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">numpy</span><span class="o">.</span><span class="n">issubdtype</span><span class="p">(</span><span class="n">_mat</span><span class="o">.</span><span class="n">dtype</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">floating</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Assay &#39;logcounts&#39; must be log-normalized values (floats).&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">_mat</span><span class="p">)):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Assay &#39;logcounts&#39; cannot contain NaN values.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Assay &#39;logcounts&#39; cannot contain &#39;NaN&#39; values.&quot;</span><span class="p">)</span>
 
     <span class="n">_rows</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">get_row_names</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">_rows</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">_rows</span><span class="p">):</span>
@@ -446,7 +449,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=01f34227"></script>
+</div><script src="../../_static/documentation_options.js?v=a58bc63e"></script>
     <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/scripts/furo.js?v=4e2eecee"></script>
