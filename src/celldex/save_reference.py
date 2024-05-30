@@ -116,12 +116,15 @@ def _save_se(x: SummarizedExperiment, path, metadata):
                 f"All labels in 'column_data' must be a list of strings; column {_cn} does not."
             )
 
+    if "logcounts" not in list(x.get_assay_names()):
+        raise ValueError("Assay 'logcounts' does not exist.")
+
     _mat = x.assay("logcounts")
     if not numpy.issubdtype(_mat.dtype, numpy.floating):
         raise ValueError("Assay 'logcounts' must be log-normalized values (floats).")
 
     if numpy.any(numpy.isnan(_mat)):
-        raise ValueError("Assay 'logcounts' cannot contain NaN values.")
+        raise ValueError("Assay 'logcounts' cannot contain 'NaN' values.")
 
     _rows = x.get_row_names()
     if len(set(_rows)) != len(_rows):
