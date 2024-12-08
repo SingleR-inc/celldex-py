@@ -91,9 +91,7 @@ def save_reference(x: Any, labels: List[str], path: str, metadata: dict):
             # Save the reference
             celldex.save_reference(sce, cache_dir, meta)
     """
-    raise NotImplementedError(
-        f"'save_dataset' is not supported for objects of class: {type(x)}"
-    )
+    raise NotImplementedError(f"'save_dataset' is not supported for objects of class: {type(x)}")
 
 
 def _save_se(x: SummarizedExperiment, path, metadata):
@@ -112,9 +110,7 @@ def _save_se(x: SummarizedExperiment, path, metadata):
     for _cn in _cols.get_column_names():
         _data = _cols.get_column(_cn)
         if not all(isinstance(y, str) for y in _data):
-            raise ValueError(
-                f"All labels in 'column_data' must be a list of strings; column {_cn} does not."
-            )
+            raise ValueError(f"All labels in 'column_data' must be a list of strings; column {_cn} does not.")
 
     if "logcounts" not in list(x.get_assay_names()):
         raise ValueError("Assay 'logcounts' does not exist.")
