@@ -15,10 +15,10 @@
 # celldex - reference cell type datasets
 
 This package provides reference datasets with annotated cell types for convenient use by [BiocPy](https://github.com/biocpy) packages and workflows in Python.
-These references were sourced and uploaded by the [celldex R/Bioconductor](https://bioconductor.org/packages/devel/data/experiment/html/celldex.html) package.
+These references were sourced and uploaded by the [**celldex** R/Bioconductor](https://bioconductor.org/packages/celldex) package.
 
-Each dataset is loaded as a [`SummarizedExperiment`](https://bioconductor.org/packages/SummarizedExperiment) that is ready for further analysis, and may be used for downstream analysis, e.g in the [SingleR Python implementation](https://github.com/BiocPy/singler).
-
+Each dataset is loaded as a [`SummarizedExperiment`](https://bioconductor.org/packages/SummarizedExperiment) that is ready for further analysis, and may be used for downstream analysis,
+e.g in the [SingleR Python implementation](https://github.com/SingleR-inc/singler).
 
 ## Installation
 
