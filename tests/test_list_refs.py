@@ -1,6 +1,6 @@
 import tempfile
 
-import pandas as pd
+from biocframe import BiocFrame
 from celldex import list_references, list_versions, fetch_latest_version
 
 __author__ = "Jayaram Kancherla"
@@ -11,7 +11,7 @@ __license__ = "MIT"
 def test_list_references():
     refs = list_references(cache_dir=tempfile.mkdtemp())
 
-    assert isinstance(refs, pd.DataFrame)
+    assert isinstance(refs, BiocFrame)
     assert len(refs) >= 7
 
 

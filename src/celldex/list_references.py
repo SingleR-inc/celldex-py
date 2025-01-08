@@ -148,10 +148,10 @@ def _sanitize_query_to_output(results: list, latest: bool, meta_name: str = "met
     for meta in _all_metas:
         cursources = meta.get("sources")
         if cursources is None:
-            sources.append(pd.DataFrame(columns=["provider", "id", "version"]))
+            sources.append(BiocFrame(columns=["provider", "id", "version"]))
         else:
             sources.append(
-                pd.DataFrame(
+                BiocFrame(
                     {
                         "provider": [s.get("provider") for s in cursources],
                         "id": [s.get("id") for s in cursources],
