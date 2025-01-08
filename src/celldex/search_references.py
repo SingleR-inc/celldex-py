@@ -2,7 +2,7 @@ import sqlite3
 from functools import lru_cache
 from typing import Union
 
-import pandas as pd
+from biocframe import BiocFrame
 from gypsum_client import cache_directory, fetch_metadata_database
 from gypsum_client.search_metadata import (
     GypsumSearchClause,
@@ -22,7 +22,7 @@ def search_references(
     cache_dir: str = cache_directory(),
     overwrite: bool = False,
     latest: bool = True,
-) -> pd.DataFrame:
+) -> BiocFrame:
     """Search for reference datasets of interest based on matching text in the associated metadata.
 
     This is a wrapper around
@@ -70,7 +70,7 @@ def search_references(
             Defaults to True.
 
     Returns:
-        A :py:class:`~pandas.DataFrame` where each row corresponds to
+        A :py:class:`~biocframe.BiocFrame` where each row corresponds to
         a dataset, containing various columns of metadata.
         Some columns may be lists to capture 1:many mappings.
     """

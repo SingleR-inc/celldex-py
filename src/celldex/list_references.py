@@ -2,7 +2,7 @@ import json
 import sqlite3
 from functools import lru_cache
 
-import pandas as pd
+from biocframe import BiocFrame
 from gypsum_client import (
     cache_directory,
     fetch_metadata_database,
@@ -14,7 +14,7 @@ __license__ = "MIT"
 
 
 @lru_cache
-def list_references(cache_dir: str = cache_directory(), overwrite: bool = False, latest: bool = True) -> pd.DataFrame:
+def list_references(cache_dir: str = cache_directory(), overwrite: bool = False, latest: bool = True) -> BiocFrame:
     """List all available reference datasets.
 
     Example:
@@ -36,7 +36,7 @@ def list_references(cache_dir: str = cache_directory(), overwrite: bool = False,
             Defaults to True.
 
     Returns:
-        A :py:class:`~pandas.DataFrame` where each row corresponds to a reference
+        A :py:class:`~biocframe.BiocFrame` where each row corresponds to a reference
         dataset. Each row contains title and description for each reference,
         the number of rows and columns, the organisms and genome builds involved,
         whether the dataset has any pre-computed reduced dimensions, and so on.
@@ -83,7 +83,7 @@ def _format_query_results(results: list, key_names: list):
 def _sanitize_query_to_output(results: list, latest: bool, meta_name: str = "meta"):
     _all_paths = [None if "/" not in p else p.rsplit("/", 1)[0] for p in results["path"]]
 
-    df = pd.DataFrame(
+    df = BiocFrame(
         {
             "name": results["asset"],
             "version": results["version"],
@@ -148,10 +148,10 @@ def _sanitize_query_to_output(results: list, latest: bool, meta_name: str = "met
     for meta in _all_metas:
         cursources = meta.get("sources")
         if cursources is None:
-            sources.append(pd.DataFrame(columns=["provider", "id", "version"]))
+            sources.append(BiocFrame(columns=["provider", "id", "version"]))
         else:
             sources.append(
-                pd.DataFrame(
+                BiocFrame(
                     {
                         "provider": [s.get("provider") for s in cursources],
                         "id": [s.get("id") for s in cursources],
